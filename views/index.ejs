@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+  <!-- Leave out Storage -->
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-storage.js"></script>
+
+  <body>
+    <h1><%= title %></h1>
+    <div>
+      <h2>Original</h2>
+      <div>User: <%= user %></div>
+    </div>
+    <div>
+      <h2>On Child Added:</h2>
+      <div id="added"></div>
+    </div>
+    <div>
+      <h2>On Child Changed:</h2>
+      <div id="changed"></div>
+    </div>
+    <div>
+      <h2>On Child Removed:</h2>
+      <div id="removed"></div>
+    </div>
+  </body>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <!--script src='javascripts/payslip.js'></script-->
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCnpySE_GvKRAxBh6-IHB2k5Lm00QCBPl8",
+      authDomain: "payslip-timetrack.firebaseapp.com",
+      databaseURL: "https://payslip-timetrack.firebaseio.com",
+      projectId: "payslip-timetrack",
+      storageBucket: "payslip-timetrack.appspot.com",
+      messagingSenderId: "387182258233"
+    };
+    firebase.initializeApp(config);
+
+    var payslip = firebase.database().ref('payslip/kris');
+    payslip.on('child_added', (data) => {
+      $('#added').html(`${ data.key }: ${ data.val() }`)
+    })
+
+    payslip.on('child_changed', (data) => {
+      $('#changed').html(`${ data.key }: ${ data.val() }`)
+    })
+
+    payslip.on('child_removed', (data) => {
+      $('#removed').html(`${ data.key }: ${ data.val() }`)
+    })
+  </script>
+</html>

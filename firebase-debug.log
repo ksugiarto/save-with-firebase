@@ -1,0 +1,35 @@
+[debug] [2018-01-26T08:55:37.449Z] ----------------------------------------------------------------------
+[debug] [2018-01-26T08:55:37.456Z] Command:       /home/ksugiarto/.nvm/versions/node/v8.5.0/bin/node /home/ksugiarto/.nvm/versions/node/v8.5.0/bin/firebase serve
+[debug] [2018-01-26T08:55:37.456Z] CLI Version:   3.13.1
+[debug] [2018-01-26T08:55:37.456Z] Platform:      linux
+[debug] [2018-01-26T08:55:37.457Z] Node Version:  v8.5.0
+[debug] [2018-01-26T08:55:37.457Z] Time:          Fri Jan 26 2018 15:55:37 GMT+0700 (WIB)
+[debug] [2018-01-26T08:55:37.457Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-26T08:55:37.493Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-26T08:55:37.493Z] > authorizing via signed-in user
+[debug] [2018-01-26T08:55:37.500Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/payslip-timetrack  
+ Fri Jan 26 2018 15:55:37 GMT+0700 (WIB)
+[debug] [2018-01-26T08:55:38.688Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-26T08:55:38.690Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/payslip-timetrack/tokens  
+ Fri Jan 26 2018 15:55:38 GMT+0700 (WIB)
+[debug] [2018-01-26T08:55:39.673Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ksugiarto/research/save-with-firebase'...
+[info] 
+[debug] [2018-01-26T08:55:39.681Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/payslip-timetrack  
+ Fri Jan 26 2018 15:55:39 GMT+0700 (WIB)
+[debug] [2018-01-26T08:55:40.909Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-26T08:55:40.910Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/387182258233/clients/_:getWebAppConfig  
+ Fri Jan 26 2018 15:55:40 GMT+0700 (WIB)
+[debug] [2018-01-26T08:55:41.624Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-26T08:55:41.781Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/home/ksugiarto/.nvm/versions/node/v8.5.0/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1370:10)
+    at _combinedTickCallback (internal/process/next_tick.js:135:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
